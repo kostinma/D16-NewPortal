@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Weekly Notification </title>
+</head>
+<body>
+    <h2> Dear {{user_name}}, </h2>
+    <h3> This is a list of news published last week. </h3>
+    <ul>
+        {% for post in posts %}
+            <li><a href="{{ site_URL }}{{ post.get_absolute_url }}">{{ post.title }}</a> </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

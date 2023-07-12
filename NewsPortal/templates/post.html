@@ -1,0 +1,28 @@
+{% extends 'flatpages/default.html' %} 
+
+{% load custom_filters %}
+
+{% block title %}
+A Post
+{% endblock title %}
+
+{% block content %}
+<h2>{{ post.title|censor }}</h2>
+<br>
+<h3> By {{ post.author.user }} </h3>
+<br>
+<!-- <h3>{{ post.time_in|date:'D.M.Y' }}</h3> -->
+<h3>{{ post.time_in|date:'d.m.Y' }}</h3>
+<br>
+
+{% if post.category.all %}
+    <h3>Categories:
+        {% for category in post.category.all %}
+            <a href="{% url 'category_list' category.id %}">{{category}}</a>
+        {% endfor %}
+    </h3>
+{% endif %}
+
+<br>
+{{ post.body|censor }}
+{% endblock content %}

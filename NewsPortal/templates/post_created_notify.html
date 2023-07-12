@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Post Notification</title>
+</head>
+<body>
+    <h2>
+        Hello, {{salutation}}!
+        <br>
+        There is a new article in your favorite category ({{category_name}})!
+        <br>
+        {{post_title}}
+        <br>
+        {{post_body|truncatechars:50 }}
+        <br>
+        The full text is available <a href="{{post_link}}">here</a>
+    </h2>
+</body>
+</html>
